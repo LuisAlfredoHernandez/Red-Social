@@ -9,7 +9,7 @@ import LabelCheck from '../components/form/labelCheck'
 import FooterText from '../components/ui/footerText'
 import HeaderText from '../components/ui/headerText';
 import BottomLink from '../components/form/bottomLink';
-import TextInput from '../components/form/textfield';
+import TextInput from '../components/form/textInput';
 import FormButton from '../components/form/button';
 
 const theme = createTheme();
@@ -43,16 +43,16 @@ export default function SignUp() {
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
-                <TextInput name={"First Name"} />
+                <TextInput name={"firstName"} autoComplete="given-name" label="First Name" />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextInput name={"Last Name"} />
+                <TextInput name={"lastName"} autoComplete="family-name" label="Last Name"/>
               </Grid>
               <Grid item xs={12}>
-                <TextInput name={"Email Address"} />
+                <TextInput name={"emailAddress"} autoComplete="email" label="Email Address" />
               </Grid>
               <Grid item xs={12}>
-                <TextInput name={"Password"} />
+                <TextInput name={"password"} autoComplete="new-password" label="Password"/>
               </Grid>
               <Grid item xs={12}>
                 <LabelCheck
@@ -65,7 +65,7 @@ export default function SignUp() {
             <FormButton name={"Sign up"} />
             <Grid container justifyContent="flex-end">
               <Grid item xs>
-                <BottomLink text={"Already have an account? Sign in"} />
+                <BottomLink text="Already have an account? Sign in"/>
               </Grid>
             </Grid>
           </Box>

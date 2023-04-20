@@ -1,14 +1,15 @@
 import TextField from '@mui/material/TextField';
 
-export default function TextInput({ name }) {
+export default function TextInput({ name, label, autoComplete, margin }) {
     return (
         <TextField
-            autoComplete="given-name"
+            margin={margin}
+            autoComplete={autoComplete}
             name={name}
             required
             fullWidth
             id={name}
-            label={name}
+            label={label}
             autoFocus
         />
     );

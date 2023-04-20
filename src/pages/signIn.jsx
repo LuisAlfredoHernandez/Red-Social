@@ -7,8 +7,10 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import FooterText from '../components/ui/footerText'
 import HeaderText from '../components/ui/headerText';
-import TextInput from '../components/form/textfield';
+import TextInput from '../components/form/textInput';
 import FormButon from '../components/form/button';
+import BottomLink from '../components/form/bottomLink';
+import LabelCheck from '../components/form/labelCheck';
 
 
 const theme = createTheme();
@@ -40,9 +42,13 @@ export default function SignIn() {
           </Avatar>
           <HeaderText component="h1" variant="h5" title="Sign in" />
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextInput name="email" />
-            <TextInput name="password" />
-            <TextInput name="Remember me" />
+            <TextInput label="Email Address" name="email" autoComplete="email" margin={"normal"}/>
+            <TextInput label="Password" name="password" autoComplete="current-password" margin={"normal"}/>
+            <LabelCheck
+              color="primary"
+              CheckboxVal="remember"
+              labelText="Remember me"
+            />
             <FormButon name="Sign In" />
             <Grid container>
               <Grid item xs>
